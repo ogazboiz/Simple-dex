@@ -9,6 +9,7 @@ import { Buy } from "./Components/Buy/Buy";
 import { TabLinks } from "./Constants";
 import { BodyStyle } from "./Styles/Header";
 import { SettingsIcon, TabLink } from "./Components/Swap/TabLink";
+import "./connection.ts";
 
 
 function App() {

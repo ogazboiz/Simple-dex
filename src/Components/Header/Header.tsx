@@ -1,21 +1,16 @@
-import { HeaderStyle, LogoStyle } from "../../Styles/Header";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useAppKit, useAppKitAccount } from "@reown/appkit/react";
+import {
+  ConnectButtonStyle,
+  HeaderStyle,
+  LogoStyle,
+} from "../../Styles/Header";
+import { formatAddress } from "../../utils/helpers";
 
 export const Header = () => {
   return (
     <HeaderStyle>
       <Logo />
-      {/* <ConnectButton /> */}
-      <ConnectButton
-        accountStatus={{
-          smallScreen: 'avatar',
-          largeScreen: 'full',
-        }}
-        showBalance={{
-          smallScreen: false,
-          largeScreen: true,
-        }}
-      />
+      <ConnectButton />
     </HeaderStyle>
   );
 };
@@ -31,6 +26,16 @@ export const Logo = () => {
   );
 };
 
-// export const ConnectButton = () => {
-//   return <ConnectButtonStyle>Connect</ConnectButtonStyle>;
-// };
+export const ConnectButton = () => {
+  const { open } = useAppKit();
+  const { address, isConnected } = useAppKitAccount();
+
+  const handleButtonClick = () => {
+    open();
+  };
+  return (
+    <ConnectButtonStyle onClick={handleButtonClick}>
+      {isConnected ? formatAddress(address ?? "") : "Connect Wallet"}
+    </ConnectButtonStyle>
+  );
+};
