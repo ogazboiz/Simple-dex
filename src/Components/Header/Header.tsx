@@ -19,9 +19,9 @@ export const Logo = () => {
   return (
     <LogoStyle>
       <div className="img">
-        <img src="/uniswap.svg" alt="uniswap logo" className="" />
+        <img src="/scrollswap.svg" alt="uniswap logo" className="" />
       </div>
-      <h3>Uniswap</h3>
+      <h3>ScrollSwap</h3>
     </LogoStyle>
   );
 };

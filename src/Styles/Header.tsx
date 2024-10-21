@@ -18,7 +18,7 @@ export const HeaderStyle = styled.header`
 `;
 
 export const LogoStyle = styled.div`
-  color: #ff007a;
+  color: #00E599;
   display: flex;
   font-weight: 600;
   align-items: center;
@@ -34,7 +34,7 @@ export const ConnectButtonStyle = styled.button`
   width: 150px;
   height: 40px;
   border-radius: 1.25rem;
-  background: #ff007a;
+  background: #00E599;
   font-weight: 600;
   font-size: 1rem;
 `;
